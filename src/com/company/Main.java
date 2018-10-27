@@ -92,11 +92,11 @@ public class Main {
         int a = 1;
         int b = 1;
         while(a < 1000 && b < 1000){
-            a += generator.nextInt(5)+1;
+            a += generator.nextInt(6)+1;
             if(a==b){
                 b=1;
             }
-            b += generator.nextInt(5)+1;
+            b += generator.nextInt(6)+1;
             if(a==b){
                 a=1;
             }

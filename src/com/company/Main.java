@@ -1,22 +1,24 @@
 package com.company;
 import java.util.Scanner;
+import java.util.Random;
 
 
 public class Main {
 
     public static void main(String[] args) {
 //	    // EX.1
-        //zadanie: zsumować wszystkie liczby całkowite od 1 do 1000000
+//      //zadanie: zsumować wszystkie liczby całkowite od 1 do 1000000
 //        int i ;
 //        long result = 0;
 //
-//        for(i = 1; i<1000000;i++){
+//        for(i = 1; i<100000;i++){
 //            result +=i;
 //        }
 //        System.out.println(result);
-//
+
 //        //EX.2
-//        //zadanie: zsumować wszystkie liczby całkowite od 1 do 1000000
+//        //zadanie2: dane liczby całkowite (int) a, b, c;
+//        // --> sprawdzić czy da się ułożyć trójkąt z bokami o długości a,b,c
 
 
 //        Scanner reader = new Scanner(System.in);  // Reading from System.in
@@ -38,7 +40,7 @@ public class Main {
         //EX.3
         //zadanie3: z liczb z przedziału [1..100] znaleźć takie a,b,c:
         //  a*a + b*b == c*c
-
+//
 //
 //        int solution = 0;
 //        int d, e;
@@ -46,7 +48,7 @@ public class Main {
 //
 //        for(d = 1 ; d<101; d++){
 //            for(e=1;e<101;e++){
-//                if( Math.sqrt(e*e+d*d) <= 100 && Math.sqrt(e*e+d*d)>1 ){
+//                if( Math.sqrt(e*e+d*d) <= 100 && Math.sqrt(e*e+d*d)>=1 ){
 //                    solution +=1;
 //                }
 //            }
@@ -60,28 +62,51 @@ public class Main {
         // podany jest tez odcinek czasu `int delta`; jest to liczba minut,
         // które chcemy dodać do obecnego czasu; proszę wyliczyć
         // godzinę i minutę chwili powstałej po dodaniu `delta` do obecnego czasu.
+//
+//        int h, m, delta, time;
+//        String minutes;
+//
+//        Scanner reader = new Scanner(System.in);  // Reading from System.in
+//        System.out.println("Input numbers as follows : h, m, delta");
+//            h = reader.nextInt();
+//            m = reader.nextInt();
+//            delta = reader.nextInt();
+//
+//
+//        reader.close();
+//        time = h*60+m+delta;
+//
+//        if(time%60<=9){
+//            minutes = "0" + time%60;
+//        }else{
+//            minutes = Integer.toString(time%60);
+//        }
+//
+//        System.out.println("It is: " + h + ":" + m + " in " + delta + "minutes it will be " +  time/60 + ":" + minutes);
 
-        int h, m, delta, time;
-        String minutes;
-
-        Scanner reader = new Scanner(System.in);  // Reading from System.in
-        System.out.println("Input numbers as follows : h, m, delta");
-            h = reader.nextInt();
-            m = reader.nextInt();
-            delta = reader.nextInt();
+        //EX.5
+        //chinczyk
+        Random generator = new Random();
 
 
-        reader.close();
-        time = h*60+m+delta;
-
-        if(time%60<9){
-            minutes = "0" + time%60;
-        }else{
-            minutes = Integer.toString(time%60);
+        int a = 1;
+        int b = 1;
+        while(a < 1000 && b < 1000){
+            a += generator.nextInt(5)+1;
+            if(a==b){
+                b=1;
+            }
+            b += generator.nextInt(5)+1;
+            if(a==b){
+                a=1;
+            }
         }
 
-        System.out.println("It is: " + h + ":" + m + " in " + delta + "minutes it will be " +  time/60 + ":" + minutes);
-
+        if(a>=1000){
+            System.out.println("A won");
+        }else{
+            System.out.println("B won");
+        }
 
     }
 }

@@ -40,21 +40,21 @@ public class Main {
         //EX.3
         //zadanie3: z liczb z przedziału [1..100] znaleźć takie a,b,c:
         //  a*a + b*b == c*c
-//
-//
-//        int solution = 0;
-//        int d, e;
-//
-//
-//        for(d = 1 ; d<101; d++){
-//            for(e=1;e<101;e++){
-//                if( Math.sqrt(e*e+d*d) <= 100 && Math.sqrt(e*e+d*d)>=1 ){
-//                    solution +=1;
-//                }
-//            }
-//
-//        }
-//        System.out.println(solution);
+
+
+        int solution = 0;
+        int d, e;
+
+
+        for(d = 1 ; d<101; d++){
+            for(e=1;e<101;e++){
+                if( Math.sqrt(e*e+d*d) <= 100 && Math.sqrt(e*e+d*d)>=1 && Math.sqrt(e*e+d*d) == (int) Math.sqrt(e*e+d*d)){
+                    solution +=1;
+                }
+            }
+
+        }
+        System.out.println(solution);
 
         //EX.4
         //zadanie4: obecny czas zadany jest w postaci dwóch liczb całkowitych,
@@ -86,27 +86,27 @@ public class Main {
 
         //EX.5
         //chinczyk
-        Random generator = new Random();
-
-
-        int a = 1;
-        int b = 1;
-        while(a < 1000 && b < 1000){
-            a += generator.nextInt(6)+1;
-            if(a==b){
-                b=1;
-            }
-            b += generator.nextInt(6)+1;
-            if(a==b){
-                a=1;
-            }
-        }
-
-        if(a>=1000){
-            System.out.println("A won");
-        }else{
-            System.out.println("B won");
-        }
+//        Random generator = new Random();
+//
+//
+//        int a = 1;
+//        int b = 1;
+//        while(a < 1000 && b < 1000){
+//            a += generator.nextInt(6)+1;
+//            if(a==b){
+//                b=1;
+//            }
+//            b += generator.nextInt(6)+1;
+//            if(a==b){
+//                a=1;
+//            }
+//        }
+//
+//        if(a>=1000){
+//            System.out.println("A won");
+//        }else{
+//            System.out.println("B won");
+//        }
 
     }
 }
